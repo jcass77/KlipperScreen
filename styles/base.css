@@ -32,6 +32,10 @@ window {
     -gtk-icon-shadow: none;
 }
 
+junction {
+    background-color: @bg;
+}
+
 switch slider {
     border: 0;
 }
@@ -39,8 +43,8 @@ switch slider {
 switch,
 treeview.view check {
     margin: 0.75em;
-    min-width: 6em;
-    min-height: 3em;
+    min-width: 5em;
+    min-height: 2.5em;
     border: 0;
     border-radius: 3em;
 }
@@ -68,8 +72,8 @@ expander label {
 button {
     background-image: none;
     background-color: @bg;
-    margin: .25em;
-    padding: 0 .5em;
+    margin: .2em;
+    padding: 0.25em;
     border-radius: 0;
     border: 0;
     -gtk-icon-shadow: none;
@@ -97,35 +101,28 @@ button.color4:disabled label {
     color: grey;
 }
 
-button.color1 image,
-button.color2 image,
-button.color3 image,
-button.color4 image {
-    margin-top: 0.2em;
+button.color1,
+button.color2,
+button.color3,
+button.color4 {
+    padding: 0.33em;
+    padding-bottom: 0.1em;
 }
 
 button.color1 {
     border-bottom: .4em solid @color1;
-    margin: .3em;
-    min-height: 3em;
 }
 
 button.color2 {
     border-bottom: .4em solid @color2;
-    margin: .3em;
-    min-height: 3em;
 }
 
 button.color3 {
     border-bottom: .4em solid @color3;
-    margin: .3em;
-    min-height: 3em;
 }
 
 button.color4 {
     border-bottom: .4em solid @color4;
-    margin: .3em;
-    min-height: 3em;
 }
 
 button.status {
@@ -167,6 +164,7 @@ combobox arrow:disabled {
 
 cellview {
     padding: 0.5em 0.25em 0.5em 0;
+    font-size: 0.91em;
 }
 
 entry {
@@ -302,7 +300,7 @@ trough {
 }
 
 .dialog button {
-    padding: 1.5em;
+    padding: 1.5em 0.2em;
     margin-top: 1em;
 }
 
@@ -316,9 +314,12 @@ trough {
     border-color: @lines;
     border-width: .15em;
     border-right-width: 0;
-    margin-left: 0;
-    margin-right: 0;
-    min-height: 3em;
+    margin: 0;
+    min-height: 2.9em;
+}
+
+.horizontal_togglebuttons_smaller {
+    min-height: 0;
 }
 
 .horizontal_togglebuttons:first-child {
@@ -367,14 +368,6 @@ trough {
     margin: .2em;
     min-height: 2.9em;
     padding: 0 .5em;
-}
-
-.heater-grid-temp {
-    min-width: 5.5em;
-}
-
-.heater-grid-temp-power {
-    min-width: 8em;
 }
 
 .keyboard_matchbox {
@@ -480,7 +473,7 @@ trough {
 .printing-filename {
     font-size: 1.4em;
     font-weight: bold;
-    margin: .25em .25em 0 0;
+    margin-right: .25em;
 }
 
 .printing-info {
@@ -498,7 +491,7 @@ trough {
 
 .printing-status {
     font-style: italic;
-    margin: 0;
+    margin-right: .25em;
     font-weight: bold;
 }
 
@@ -609,7 +602,7 @@ trough progress {
 
 .graph_label {border-left-width: .4em; border-left-style: solid;}
 
-button.graph_label {padding-left: 0.15em;}
+button.graph_label {padding-left: 0.25em;}
 
 .dialog-error {
     border-bottom: .4em solid @error;
@@ -635,6 +628,17 @@ button.graph_label {padding-left: 0.15em;}
     border-bottom: .4em solid @color1;
 }
 
+.dialog .image-button {
+    background-color: transparent;
+    padding: 0;
+    margin: 0.25em;
+}
+
 flowboxchild {
     padding: 0;
+}
+
+flowbox button {
+    margin: 0.1em;
+    padding: .5em;
 }
