@@ -129,7 +129,7 @@ create_virtualenv()
     python3 -m venv "${KSENV}"
 
     if ! . "${KSENV}/bin/activate"; then
-        echo_error "Could not activate the enviroment, try deleting ${KSENV} and retry"
+        echo_error "Could not activate the environment, try deleting ${KSENV} and retry"
         exit 1
     fi
 
@@ -146,10 +146,10 @@ create_virtualenv()
         if [[ "$(uname -m)" =~ armv[67]l ]]; then
             echo_text "Adding piwheels.org as extra index..."
             pip install --extra-index-url https://www.piwheels.org/simple --upgrade pip setuptools
-            pip install --extra-index-url https://www.piwheels.org/simple -r ${KSPATH}/scripts/KlipperScreen-requirements.txt
+            pip install --extra-index-url https://www.piwheels.org/simple -r ${KSPATH}/scripts/KlipperScreen-requirements.txt --prefer-binary
         else
             pip install --upgrade pip setuptools
-            pip install -r ${KSPATH}/scripts/KlipperScreen-requirements.txt
+            pip install -r ${KSPATH}/scripts/KlipperScreen-requirements.txt --prefer-binary
         fi
         if [ $? -gt 0 ]; then
             echo_error "Unable to install dependencies, aborting install."
@@ -232,7 +232,6 @@ polkit.addRule(function(action, subject) {
         subject.user == "$USER") {
         return polkit.Result.YES;
         }
-    }
 });
 EOF
 }
